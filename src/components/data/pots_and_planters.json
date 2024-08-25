@@ -1,0 +1,87 @@
+{
+  "gallery": {
+    "flowers": [
+      {
+        "name": "Ceramic Pots",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbaYV6BN9g68rfkt_UX3Zw0ZdwbKOv82GBdQ&s",
+        "details": [
+          {
+            "image": "https://m.media-amazon.com/images/I/61WHxk89suL._AC_UF894,1000_QL80_.jpg",
+            "name": "Blue Ceramic Pot",
+            "price": "$25.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://masonhome.in/cdn/shop/products/IMG_0054.jpg?v=1582206465&width=1500",
+            "name": "White Ceramic Pot",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://i.etsystatic.com/11562651/r/il/c429c7/2664779854/il_fullxfull.2664779854_7q50.jpg",
+            "name": "Green Ceramic Pot",
+            "price": "$22.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Plastic Pots",
+        "image": "https://www.urbanplant.in/cdn/shop/files/PrimaryMulti11copy.webp?v=1684745011",
+        "details": [
+          {
+            "image": "https://media.istockphoto.com/id/1245029866/photo/black-plastic-flower-pots.jpg?s=612x612&w=0&k=20&c=ixPEQ_KeiItDZLw3LcCSO7EhRICap1uBEeUtm-2ZLpM=",
+            "name": "Black Plastic Pot",
+            "price": "$10.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSATR_pHTN0MIoi75mYUpww41-hpEOejksSFQ&s",
+            "name": "Red Plastic Pot",
+            "price": "$12.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnBJAvDilx5rMTtdL_-LvHgXEmtc5rjDpXYg&s",
+            "name": "Blue Plastic Pot",
+            "price": "$11.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Hexa Pots",
+        "image": "https://m.media-amazon.com/images/I/61wwwLaHhVL.jpg",
+        "details": [
+          {
+            "image": "https://m.media-amazon.com/images/I/61snJpL+U7L.jpg",
+            "name": "White Hexa Pot",
+            "price": "$15.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://www.shutterstock.com/image-illustration/3d-iilustration-black-cauldron-isolated-600nw-2331075115.jpg",
+            "name": "Black Hexa Pot",
+            "price": "$18.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://www.shutterstock.com/image-photo/many-different-artificial-plants-flower-260nw-2330171389.jpg",
+            "name": "Grey Hexa Pot",
+            "price": "$17.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          }
+        ]
+      }
+    ]
+  }
+}

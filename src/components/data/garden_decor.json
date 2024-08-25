@@ -1,0 +1,107 @@
+{
+  "gallery": {
+    "flowers": [
+      {
+        "name": "Garden Tools",
+        "image": "https://t4.ftcdn.net/jpg/01/15/11/19/360_F_115111910_zuJsuaSUrgEU6iQV89di86x9gyMOXP2M.jpg",
+        "details": [
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLuSQfZbb8KdKsyP5sN0r7it3ZAjQQlNXUng&s",
+            "name": "Hand Trowel",
+            "price": "$8.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVmr2aNf9qLClTh4dqXVXi_YEHK4M8ZqKujg&s",
+            "name": "Garden Shears",
+            "price": "$15.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://www.faithfulltools.com/images/xxlarge/FAIESSGRE.jpg",
+            "name": "Soil Rake",
+            "price": "$12.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Pot Stands",
+        "image": "https://ouchcart.com/cdn/shop/products/266...jpg?v=1634613595&width=1024",
+        "details": [
+          {
+            "image": "https://www.shutterstock.com/image-photo/decorative-wrought-iron-flower-stand-260nw-1768798946.jpg",
+            "name": "Iron Pot Stand",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://www.urbanplant.in/cdn/shop/files/Primary1copy_74d7800b-335a-4dc8-a4e0-7a9bbfe03d65.webp?v=1692982426",
+            "name": "Wooden Pot Stand",
+            "price": "$25.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://i5.walmartimages.com/asr/ccce0f1a-1131-4433-9977-737f888e39e6.96054bb5b9188b9dd8fac03e5485e670.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+            "name": "Metal Pot Stand",
+            "price": "$18.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Garden Statues",
+        "image": "https://www.shutterstock.com/image-photo/cupid-statue-decorated-botany-garden-260nw-1801015987.jpg",
+        "details": [
+          {
+            "image": "https://t3.ftcdn.net/jpg/04/94/74/08/360_F_494740887_imJ080P7oryzSaOi82pRXeDmArCd2cL6.jpg",
+            "name": "Gnome Statue",
+            "price": "$30.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/ba328089-99c4-43b5-b2e7-d419fa538014._SL480_.jpg",
+            "name": "Fairy Statue",
+            "price": "$40.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Garden Lighting",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiyLwlJSjaBaY6-pYcqCJ1iPpyyMunkwEOA&s",
+        "details": [
+          {
+            "image": "https://www.treehugger.com/thmb/4yxv7u2AV2XtPr0Gb9WI63Imjpk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/solar-battery-and-lantern-in-park-close-up-side-view--1278723493-62ab2d005551488a9deba315f4e5b91b.jpg",
+            "name": "Solar Lights",
+            "price": "$25.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuoQmz8IYWAF5M2JBMMsWb78H2itfyLuwqMQ&s",
+            "name": "String Lights",
+            "price": "$15.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-aRshSrK-rnkAe4juVd4ZstczIiFLr3Q5Ig&s",
+            "name": "Lantern Lights",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          }
+        ]
+      }
+    ]
+  }
+}

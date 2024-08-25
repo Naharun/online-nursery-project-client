@@ -1,0 +1,106 @@
+{
+  "gallery": {
+    "flowers": [
+      {
+        "name": "Anniversary",
+        "image": "https://i.pinimg.com/736x/14/26/a0/1426a09fad020ecfad165b972b949f9b.jpg",
+        "details": [
+          {
+            "image": "https://cdn.mos.cms.futurecdn.net/qYNPupRnspGWPF4886Z7hB.jpg",
+            "name": "Peace Lily",
+            "price": "$25.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 20, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8MvDhws3Yq8Qfcfm9mSpq8H9Lk0Tb7S7enQ&s",
+            "name": "Orchid",
+            "price": "$40.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 24, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Birthday",
+        "image": "https://t3.ftcdn.net/jpg/04/46/07/94/360_F_446079451_mLbLQ10LOQDbGkHoVkoXTr0kKrbbqOSc.jpg",
+        "details": [
+          {
+            "image": "https://media.istockphoto.com/id/1316664758/photo/decorative-flower.jpg?s=612x612&w=0&k=20&c=2kMkXI_Pm5syHVy1hvFH68flTz9oinm2iu2mgQV9y08=",
+            "name": "Snake Plant",
+            "price": "$30.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 21, 2024"
+          },
+          {
+            "image": "https://t4.ftcdn.net/jpg/07/14/11/35/360_F_714113535_qsVq3LgNtSiTgMviUeEDtDwynZLa6hey.jpg",
+            "name": "Lucky Bamboo",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 25, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Farewell",
+        "image": "https://c8.alamy.com/comp/2PH95N8/spring-flower-decoration-label-with-english-text-farewell-2PH95N8.jpg",
+        "details": [
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3GXf5_ZrHgCgJfb2J6cZSekxAfHOkYph8MQ&s",
+            "name": "Succulent Garden",
+            "price": "$35.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 22, 2024"
+          },
+          {
+            "image": "https://cdn.mos.cms.futurecdn.net/qYNPupRnspGWPF4886Z7hB.jpg",
+            "name": "Peace Lily",
+            "price": "$25.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 20, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Marriage",
+        "image": "https://images.unsplash.com/photo-1521520368710-3ab197656d60?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2VkZGluZyUyMGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D",
+        "details": [
+          {
+            "image": "https://www.bonsaiempire.com/images/videos/misc-flowering-bonsai.jpg",
+            "name": "Bonsai Tree",
+            "price": "$45.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 23, 2024"
+          },
+          {
+            "image": "https://www.thespruce.com/thmb/DkT3ceG_yidt0gH9SYX_OJhg1cE=/3845x0/filters:no_upscale():max_bytes(150000):strip_icc()/orchid-colors-7372315_00_hero-782fedee761d4cbeb743d0546f3e4129.jpg",
+            "name": "Orchid",
+            "price": "$40.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 24, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Congratulations",
+        "image": "https://c8.alamy.com/comp/DW85NG/congratulations-card-with-pink-roses-bouquet-with-glitter-DW85NG.jpg",
+        "details": [
+          {
+            "image": "https://l450v.alamy.com/450v/dw8605/congratulations-card-with-pink-roses-isolated-on-white-dw8605.jpg",
+            "name": "Pink Rose",
+            "price": "$15.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 26, 2024"
+          },
+          {
+            "image": "https://fyf.tac-cdn.net/images/products/small/TBC03-2.jpg?auto=webp&quality=60&width=650",
+            "name": "Various Flowers",
+            "price": "$30.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "July 21, 2024"
+          }
+        ]
+      }
+    ]
+  }
+}

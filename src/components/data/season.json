@@ -1,0 +1,114 @@
+{
+  "gallery": {
+    "flowers": [
+      {
+        "name": "Spring Flowers",
+        "image": "https://images.pexels.com/photos/68507/spring-flowers-flowers-collage-floral-68507.jpeg?cs=srgb&dl=pexels-pixabay-68507.jpg&fm=jpg",
+        "details": [
+          {
+            "image": "https://media.istockphoto.com/id/1418276634/photo/close-up-colorful-tulip-flowers-in-a-field.jpg?s=612x612&w=0&k=20&c=s7ijJ5pQ9MqSG668MQm7ocz6jOLXF_US3_YziEKKiCE=",
+            "name": "Tulip",
+            "price": "$15.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://media.istockphoto.com/id/1176574947/photo/yellow-daffodil-flowers.jpg?s=612x612&w=0&k=20&c=X0MEY3rHSB6Yh2tG-lx8tmzQcfwBV9n4iWUyugkxRiw=",
+            "name": "Daffodil",
+            "price": "$10.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://t3.ftcdn.net/jpg/05/77/23/02/360_F_577230212_7Y37rWBV8XWFyIZOiFVsLeisg6qL21rO.jpg",
+            "name": "Cherry Blossom",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Summer Flowers",
+        "image": "https://designerblooms.ca/cdn/shop/articles/summer_flowers_1200x1200.jpg?v=1689882475",
+        "details": [
+          {
+            "image": "https://cdn.pixabay.com/photo/2016/08/28/23/24/sunflower-1627193_640.jpg",
+            "name": "Sunflower",
+            "price": "$12.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://t3.ftcdn.net/jpg/04/43/37/02/360_F_443370298_k0py4bupxi0HUX243GhK0L2pZQcMDSvH.jpg",
+            "name": "Lavender",
+            "price": "$18.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://cdn.pixabay.com/photo/2016/09/03/18/42/dahlia-1642461_640.jpg",
+            "name": "Dahlia",
+            "price": "$16.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Autumn Flowers",
+        "image": "https://cache.desktopnexus.com/thumbseg/2410/2410809-bigthumbnail.jpg",
+        "details": [
+          {
+            "image": "https://cdn.britannica.com/09/174809-050-CA9F8F8C/daisy-mums-ray-flowers-disk-centre.jpg",
+            "name": "Chrysanthemum",
+            "price": "$14.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY-zeM7kiYVfdWtofIlbfrzyCqkbMCm20bOg&s",
+            "name": "Aster",
+            "price": "$13.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_sd_r2kIMF-zcYp5Gjpv9eUg_SCPiSmg_YQ&s",
+            "name": "Marigold",
+            "price": "$11.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Winter Flowers",
+        "image": "https://t4.ftcdn.net/jpg/02/28/92/27/360_F_228922795_imisjqE7p4J2rHDqEPZQroW6l61IizQG.jpg",
+        "details": [
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgWJbCyaAWpjlbg7qSw9p-KCsPJMQEwoExHQ&s",
+            "name": "Poinsettia",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRNV5TXn1cTy9blpbAmHia7UY0A58WAx43g&s",
+            "name": "Camellia",
+            "price": "$18.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV6lmyKNKGSitaDN132Ik4-32N9e3F0wYGlA&s",
+            "name": "Hellebore",
+            "price": "$22.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+/* Sidebar.css */
+
+
+
+.top-level-menu .ant-menu-submenu-title {
+    background-color: purple !important;
+    color: white !important;
+    
+}
+
+.top-level-menu .ant-menu-submenu-title:hover {
+    background-color: rgb(218, 203, 218) !important;
+    color: white !important;
+}
+
+.top-level-menu .ant-menu-submenu-open .ant-menu-submenu-title {
+    background-color: rgb(171, 121, 171) !important;
+    color: white !important;
+  
+  
+    
+}
+
+.sub-menu .ant-menu-item,
+.sub-menu-item {
+    background-color: white !important;
+ 
+}
+
+.sub-menu .ant-menu-item:hover,
+.sub-menu-item:hover {
+    background-color: #f0f0f0 !important;
+   
+}
+
+/* Selected menu item styles */
+.ant-menu-item-selected {
+    background-color: white !important;
+    color: rgb(171, 121, 171) !important;
+}
+
+/* To make the submenu items text blueviolet on selection */
+.ant-menu-item-selected>a,
+.ant-menu-item-selected>a:hover {
+    color: rgb(171, 121, 171) !important;
+    
+
+    
+ 
+}
+
+
+
+.flowerName{
+    color: white !important;
+    background-color: slategray !important;
+    font-size: 15px;
+    padding: 10px;
+    margin: 50px 20px;
+    border-radius: 10px;
+    text-align: center;
+
+
+}
+.plants{
+    font-size: 18px;
+    padding: 5px;
+    color: white;
+    background-color: slategray;
+    margin: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.addToCart{
+    background-color: black;
+    color: white;
+    
+}
+
+

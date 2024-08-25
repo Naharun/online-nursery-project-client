@@ -1,0 +1,54 @@
+/* Style for arrows  */
+
+.slick-prev,
+.slick-next {
+    width: 30px !important;
+    /* Set background size to 30px */
+    height: 30px !important;
+    /* Set background size to 30px */
+    background-color: white !important;
+    /* White rounded background */
+    border-radius: 50% !important;
+    /* Make the background rounded */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
+    /* Ensure it's on top of other elements */
+    opacity: 0.75 !important;
+    /* Slightly transparent */
+    transition: opacity 0.3s ease !important;
+    padding: 0 !important;
+    /* Remove any padding */
+}
+
+/* Center the arrows icon */
+.slick-prev:before,
+.slick-next:before {
+    color: purple !important;
+    /* Purple color for arrow icons */
+    font-size: 25px !important;
+    /* Adjust icon size to fit the background */
+    margin: 0 !important;
+    /* Remove any default margins */
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1 !important;
+    /* Ensure no extra space is added */
+    content: '‹' !important;
+    /* Custom left arrow content */
+}
+
+.slick-next:before {
+    content: '›' !important;
+    /* Custom right arrow content */
+}
+
+/* Adjust the position of the arrows */
+.slick-prev {
+    left: 10px !important;
+}
+
+.slick-next {
+    right: 10px !important;
+}

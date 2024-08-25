@@ -1,0 +1,114 @@
+{
+  "gallery": {
+    "flowers": [
+      {
+        "name": "Vegetable Seeds",
+        "image": "https://media.istockphoto.com/id/637856490/photo/various-legumes.jpg?s=612x612&w=0&k=20&c=Zk7TiC0eMeNc9C2kfjBz9mMxt_qWppqITELmkaQ4Mrg=",
+        "details": [
+          {
+            "image": "https://media.istockphoto.com/id/1132854763/photo/a-heap-of-quality-seeds-of-tomato-vegetable-for-your-beautiful-personal-garden-can-be-used.jpg?s=612x612&w=0&k=20&c=KGdAPmTgJaotX9kYvw_1lXWPHp456bzBFo_PTJ59brI=",
+            "name": "Tomato Seeds",
+            "price": "$5.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://www.shutterstock.com/image-photo/carrot-seeds-isolated-on-white-260nw-1884755695.jpg",
+            "name": "Carrot Seeds",
+            "price": "$4.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          },
+          {
+            "image": "https://www.shutterstock.com/image-photo/pile-lettuce-seeds-isolated-on-260nw-2367895535.jpg",
+            "name": "Lettuce Seeds",
+            "price": "$3.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "March 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Flower Bulbs",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnM0E79dzdG7JXJ7D_vntF1u1vDOkmg6f1Ew&s",
+        "details": [
+          {
+            "image": "https://media.istockphoto.com/id/1365879708/photo/large-tulip-flower-bulbs-with-small-offset-bulbs.jpg?s=612x612&w=0&k=20&c=DST0txp_7c9F6Oqgb6gzdK97qTjO6hF--qzkFryrvao=",
+            "name": "Tulip Bulbs",
+            "price": "$15.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://www.shutterstock.com/image-photo/crocus-daffodil-bulbs-ready-autumn-600nw-2345372513.jpg",
+            "name": "Daffodil Bulbs",
+            "price": "$10.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvxsO7toLMzOwMjpSyu25BzWpjdqfV0d_A0A&s",
+            "name": "Hyacinth Bulbs",
+            "price": "$12.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "June 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Flower Seeds",
+        "image": "https://c8.alamy.com/comp/BKXJ78/selection-of-vegetable-and-flower-seeds-in-a-wooden-tray-flat-lay-BKXJ78.jpg",
+        "details": [
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbHuwt50-1q15CbYR9gUylViWAYdHieZL20Q&s",
+            "name": "Sunflower Seeds",
+            "price": "$8.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRDHIJiNTAXg7N2rctIZkTg31_Qi79qzFIQ&s",
+            "name": "Lavender Seeds",
+            "price": "$6.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          },
+          {
+            "image": "https://c8.alamy.com/comp/BHJEMA/pile-of-french-marigold-seeds-BHJEMA.jpg",
+            "name": "Marigold Seeds",
+            "price": "$7.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "September 21, 2024"
+          }
+        ]
+      },
+      {
+        "name": "Forestry Seeds",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyQyVBlWfUuBs-bYuh8glETlbDyTe6w_MtoA&s",
+        "details": [
+          {
+            "image": "https://www.shutterstock.com/image-photo/bunch-mature-pine-seedlings-nuts-260nw-1034305597.jpg",
+            "name": "Pine Seeds",
+            "price": "$20.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          },
+          {
+            "image": "https://i0.wp.com/growingwithscience.com/acorns.jpg?resize=576%2C385",
+            "name": "Oak Seeds",
+            "price": "$22.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          },
+          {
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPFQEcMFVb0fXxxSEae5Z_B7gzZ9tPwerxg&s",
+            "name": "Maple Seeds",
+            "price": "$18.00",
+            "add_to_cart": true,
+            "expected_dispatch_date": "December 21, 2024"
+          }
+        ]
+      }
+    ]
+  }
+}
