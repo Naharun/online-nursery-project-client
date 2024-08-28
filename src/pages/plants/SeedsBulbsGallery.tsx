@@ -1,4 +1,5 @@
-// // Seeds & Bulbs Gallery page
+// Seeds & Bulbs Gallery page
+
 
 import React from "react";
 import { Card, Col, Row } from "antd";
@@ -11,9 +12,9 @@ const SeedsBulbsGallery: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
-  const seedsBulbs = data.find((item: any) => item.seeds)?.seeds || [];
+  const seedsBulbs = data?.find((item: any) => item.seeds)?.seeds || [];
 
-  if (seedsBulbs.length === 0) return <div>No data available</div>;
+  if (!seedsBulbs.length) return <div>No data available</div>;
 
   return (
     <>

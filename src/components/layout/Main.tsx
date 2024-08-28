@@ -1,8 +1,9 @@
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "../share/Navbar";
 import Sidebar from "./Sidebar";
 import Headers from "./Header";
+import AppFooter from "../share/AppFooter";
 
 const { Content } = Layout;
 
@@ -24,6 +25,7 @@ const Main = () => {
           <Outlet />
         </Content>
       </Layout>
+      <AppFooter />
     </Layout>
   );
 };

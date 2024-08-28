@@ -11,9 +11,9 @@ const PotsPlantersGallery: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
-  const potsPlanters = data.find((item: any) => item.pots)?.pots || [];
+  const potsPlanters = data?.find((item: any) => item.pots)?.pots || [];
 
-  if (potsPlanters.length === 0) return <div>No data available</div>;
+  if (!potsPlanters.length) return <div>No data available</div>;
 
   return (
     <>

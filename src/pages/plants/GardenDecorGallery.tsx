@@ -1,4 +1,4 @@
-// Garden Decor Gallery page
+// // Garden Decor Gallery page
 
 import React from "react";
 import { Card, Col, Row } from "antd";
@@ -12,9 +12,9 @@ const GardenDecorGallery: React.FC = () => {
   if (error) return <div>Error loading data</div>;
 
   const gardenDecor =
-    data.find((item: any) => item.gardenDecor)?.gardenDecor || [];
+    data?.find((item: any) => item.gardenDecor)?.gardenDecor || [];
 
-  if (gardenDecor.length === 0) return <div>No data available</div>;
+  if (!gardenDecor.length) return <div>No data available</div>;
 
   return (
     <>

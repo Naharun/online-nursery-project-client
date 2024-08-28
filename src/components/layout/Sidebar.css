@@ -6,16 +6,17 @@
     background-color: purple !important;
     color: white !important;
     
+    
 }
 
 .top-level-menu .ant-menu-submenu-title:hover {
     background-color: rgb(218, 203, 218) !important;
-    color: white !important;
+    color: black !important;
 }
 
 .top-level-menu .ant-menu-submenu-open .ant-menu-submenu-title {
     background-color: rgb(171, 121, 171) !important;
-    color: white !important;
+    color: rgb(50, 50, 50) !important;
   
   
     
@@ -23,7 +24,7 @@
 
 .sub-menu .ant-menu-item,
 .sub-menu-item {
-    background-color: white !important;
+    background-color: rgb(236, 234, 234) !important;
  
 }
 
@@ -36,7 +37,7 @@
 /* Selected menu item styles */
 .ant-menu-item-selected {
     background-color: white !important;
-    color: rgb(171, 121, 171) !important;
+    color: hwb(300 7% 40%) !important;
 }
 
 /* To make the submenu items text blueviolet on selection */

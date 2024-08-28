@@ -15,7 +15,7 @@ import PotsPlantersGallery from "../pages/plants/PotsPlantersGallery";
 import PotsPlantersDetails from "../pages/plants/PotsPlantersDetails";
 import GardenDecorGallery from "../pages/plants/GardenDecorGallery";
 import GardenDecorDetails from "../pages/plants/GardenDecorDetails";
-import AboutUs from "../pages/home/About.Us";
+import AboutUs from "../pages/home/AboutUs";
 import ContactUs from "../pages/home/ContactUs";
 import AllProducts from "../pages/allProduct/AllProducts";
 import InStock from "../pages/availability/InStock";

@@ -44,7 +44,7 @@ const AboutUs: React.FC = () => {
           </Title>
           <Divider />
           <Paragraph>
-            At Online Nursery, we believe that the beauty of nature should be
+            At Plantify, we believe that the beauty of nature should be
             accessible to everyone. Our passion for plants and flowers drives us
             to curate a stunning collection of greenery that can transform any
             space into a vibrant, living environment. Whether you're an
@@ -54,13 +54,12 @@ const AboutUs: React.FC = () => {
           </Paragraph>
           <Title level={3}>Our Story</Title>
           <Paragraph>
-            Online Nursery was born from a love for nature and a deep
-            understanding of the joy that plants bring to our lives. What
-            started as a small, local nursery has grown into an online
-            destination for plant lovers across the country. Our team is
-            dedicated to selecting the highest quality plants and flowers,
-            ensuring they arrive at your doorstep healthy, vibrant, and ready to
-            thrive.
+            Plantify was born from a love for nature and a deep understanding of
+            the joy that plants bring to our lives. What started as a small,
+            local nursery has grown into an online destination for plant lovers
+            across the country. Our team is dedicated to selecting the highest
+            quality plants and flowers, ensuring they arrive at your doorstep
+            healthy, vibrant, and ready to thrive.
           </Paragraph>
           <Title level={3}>What We Offer</Title>
           <Paragraph>
@@ -79,9 +78,8 @@ const AboutUs: React.FC = () => {
             on how to keep it healthy and beautiful.
           </Paragraph>
           <Paragraph>
-            Thank you for choosing [Your Nursery Name] to bring a touch of
-            nature into your life. We look forward to helping you grow your own
-            green oasis!
+            Thank you for choosing Plantify to bring a touch of nature into your
+            life. We look forward to helping you grow your own green oasis!
           </Paragraph>
         </Typography>
       </Content>

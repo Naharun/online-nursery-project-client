@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Card, Col, Row } from "antd";
-import { useGetPlantsQuery } from "../../redux/api/api"; // Import your API hook
+import { useGetPlantsQuery } from "../../redux/api/api"; // Import  API hook
 import { Link } from "react-router-dom";
 
 const FloweringPlantsGallery: React.FC = () => {
@@ -11,9 +11,10 @@ const FloweringPlantsGallery: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
-  const floweringPlants = data.find((item: any) => item.flowers)?.flowers || [];
+  const floweringPlants =
+    data?.find((item: any) => item.flowers)?.flowers || [];
 
-  if (floweringPlants.length === 0) return <div>No data available</div>;
+  if (!floweringPlants.length) return <div>No data available</div>;
 
   return (
     <>

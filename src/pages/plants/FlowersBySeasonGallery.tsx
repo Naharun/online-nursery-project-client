@@ -1,4 +1,4 @@
-// /Flowers By Season Gallery page
+// // /Flowers By Season Gallery page
 
 import React from "react";
 import { Card, Col, Row } from "antd";
@@ -11,9 +11,9 @@ const FlowersBySeasonGallery: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
-  const flowersBySeason = data.find((item: any) => item.season)?.season || [];
+  const flowersBySeason = data?.find((item: any) => item.season)?.season || [];
 
-  if (flowersBySeason.length === 0) return <div>No data available</div>;
+  if (!flowersBySeason.length) return <div>No data available</div>;
 
   return (
     <>

@@ -1,8 +1,24 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Layout } from "antd";
-const { Header } = Layout;
 import { GiVineFlower } from "react-icons/gi";
+import { setSearchTerm } from "../../redux/features/searchSlice";
+import { useNavigate } from "react-router-dom";
+
+const { Header } = Layout;
 
 const Headers = () => {
+  const [searchTerm, setSearchTermState] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    dispatch(setSearchTerm(searchTerm));
+    navigate("/all-products");
+  };
+
+  // Function to filter products based on search term
+
   return (
     <Layout>
       <Header
@@ -24,13 +40,13 @@ const Headers = () => {
         </p>
         <h3
           style={{
-            marginRight: "600px",
+            marginRight: "650px",
             fontFamily: "arial",
             color: "white",
             fontSize: "18px",
           }}
         >
-          Online Nursery
+          Plantify
         </h3>
 
         <div>
@@ -45,6 +61,8 @@ const Headers = () => {
             }}
             type="text"
             placeholder="search"
+            value={searchTerm}
+            onChange={(e) => setSearchTermState(e.target.value)}
           />
           <input
             style={{
@@ -55,6 +73,7 @@ const Headers = () => {
             }}
             type="button"
             value="Enter"
+            onClick={handleSearch}
           />
         </div>
       </Header>

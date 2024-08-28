@@ -1,5 +1,5 @@
 import AllProducts from "../../allProduct/AllProducts";
-import AboutUs from "../About.Us";
+import AboutUs from "../AboutUs";
 import Banner from "../Banner";
 import ContactUs from "../ContactUs";
 

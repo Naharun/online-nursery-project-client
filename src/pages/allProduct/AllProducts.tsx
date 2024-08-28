@@ -1,81 +1,105 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Card, Col, Row } from "antd";
 import { useGetPlantsQuery } from "../../redux/api/api";
-import FloweringPlantsGallery from "../plants/FloweringPlantsGallery";
-import FlowersBySeasonGallery from "../plants/FlowersBySeasonGallery";
-import GardenDecorGallery from "../plants/GardenDecorGallery";
-import GiftPlantsGallery from "../plants/GiftPlantsGallery";
-import PotsPlantersGallery from "../plants/PotsPlantersGallery";
-import SeedsBulbsGallery from "../plants/SeedsBulbsGallery";
-import { GiClick } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Product } from "../../types/types";
 
 const AllProducts: React.FC = () => {
   const { data, error, isLoading } = useGetPlantsQuery();
+  const searchTerm = useSelector((state: any) => state.search.toLowerCase());
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
-  return (
+  // Check data structure
+  console.log("API Data:", data);
+  console.log("Search Term:", searchTerm);
+
+  // Function to filter products based on search term
+  const filterProducts = (products: Product[]) =>
+    products.filter((product: any) =>
+      product.name.toLowerCase().includes(searchTerm)
+    );
+
+  // Retrieve and filter products
+  const floweringPlants =
+    data?.find((item: any) => item.flowers)?.flowers || [];
+  const flowersBySeason = data?.find((item: any) => item.season)?.season || [];
+  const gardenDecor =
+    data?.find((item: any) => item.gardenDecor)?.gardenDecor || [];
+  const giftPlants = data?.find((item: any) => item.gift)?.gift || [];
+  const potsPlanters = data?.find((item: any) => item.pots)?.pots || [];
+  const seedsBulbs = data?.find((item: any) => item.seeds)?.seeds || [];
+
+  const filteredFloweringPlants = filterProducts(floweringPlants);
+  const filteredFlowersBySeason = filterProducts(flowersBySeason);
+  const filteredGardenDecor = filterProducts(gardenDecor);
+  const filteredGiftPlants = filterProducts(giftPlants);
+  const filteredPotsPlanters = filterProducts(potsPlanters);
+  const filteredSeedsBulbs = filterProducts(seedsBulbs);
+
+  const renderProductSection = (
+    title: string,
+    products: any[],
+    routePrefix: string
+  ) => (
     <>
-      <p
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "10px",
-          margin: "50px 20px 0px",
-          textAlign: "center",
-          fontSize: "22px",
-          gap: "5px",
-        }}
-      >
-        Find Your Perfect Plant Here{" "}
-        <span style={{ fontSize: "25px" }}>
-          <GiClick />
-        </span>
-      </p>
+      <h2 className="plants">{title}</h2>
       <Row gutter={[16, 16]}>
-        <Col span={24}>
-          <FloweringPlantsGallery
-            flowersData={
-              data.find((item: { flowers: any }) => item.flowers)?.flowers || []
-            }
-          />
-        </Col>
-        <Col span={24}>
-          <FlowersBySeasonGallery
-            seasonData={
-              data.find((item: { season: any }) => item.season)?.season || []
-            }
-          />
-        </Col>
-        <Col span={24}>
-          <GardenDecorGallery
-            decorData={
-              data.find((item: { gardenDecor: any }) => item.gardenDecor)
-                ?.gardenDecor || []
-            }
-          />
-        </Col>
-        <Col span={24}>
-          <GiftPlantsGallery
-            giftData={data.find((item: { gift: any }) => item.gift)?.gift || []}
-          />
-        </Col>
-        <Col span={24}>
-          <PotsPlantersGallery
-            potsData={data.find((item: { pots: any }) => item.pots)?.pots || []}
-          />
-        </Col>
-        <Col span={24}>
-          <SeedsBulbsGallery
-            seedsData={
-              data.find((item: { seeds: any }) => item.seeds)?.seeds || []
-            }
-          />
-        </Col>
+        {products.length === 0 ? (
+          <Col span={24}>
+            <div>No data available</div>
+          </Col>
+        ) : (
+          products.map((product: any) => (
+            <Col key={product.name} span={6}>
+              <Link to={`/${routePrefix}/${product.name}`}>
+                <Card
+                  hoverable
+                  cover={
+                    <img
+                      style={{ height: "200px" }}
+                      alt={product.name}
+                      src={product.image}
+                    />
+                  }
+                >
+                  <Card.Meta title={product.name} />
+                </Card>
+              </Link>
+            </Col>
+          ))
+        )}
       </Row>
     </>
+  );
+
+  return (
+    <div>
+      {renderProductSection(
+        "Flowering Plants",
+        filteredFloweringPlants,
+        "flower"
+      )}
+      {renderProductSection(
+        "Flowers By Season",
+        filteredFlowersBySeason,
+        "season"
+      )}
+      {renderProductSection(
+        "Garden Decor",
+        filteredGardenDecor,
+        "garden-decor"
+      )}
+      {renderProductSection("Gift Plants", filteredGiftPlants, "gift")}
+      {renderProductSection(
+        "Pots & Planters",
+        filteredPotsPlanters,
+        "pots-planters"
+      )}
+      {renderProductSection("Seeds & Bulbs", filteredSeedsBulbs, "seeds-bulbs")}
+    </div>
   );
 };
 
