@@ -21,10 +21,21 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<FlowerDetail>) => {
-      state.items.push(action.payload);
+      const existingItem = state.items.find(
+        (item) => item.name === action.payload.name
+      );
+      if (!existingItem) {
+        state.items.push(action.payload);
+      }
+    },
+    removeFromCart: (state, action: PayloadAction<number>) => {
+      state.items.splice(action.payload, 1);
+    },
+    clearCart: (state) => {
+      state.items = [];
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

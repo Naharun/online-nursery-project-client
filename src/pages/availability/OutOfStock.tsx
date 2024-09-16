@@ -1,71 +1,72 @@
 import React from "react";
-import { Card, Col, Row } from "antd";
-import { useGetPlantsQuery } from "../../redux/api/api";
-
-const { Meta } = Card;
+import { useGetPlantsQuery } from "../../redux/api/api"; // Adjust the import path as necessary
 
 const OutOfStock: React.FC = () => {
-  const { data } = useGetPlantsQuery();
+  const { data, error, isLoading } = useGetPlantsQuery();
 
-  // Log the full API data for inspection
-  console.log("API Data:", data);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  // Process the data to extract out-of-stock items
-  const outOfStockItems = data
-    ? data.flatMap((category: any) => {
-        // Log each category
-        console.log("Category:", category);
+  if (error) {
+    return <div>Error fetching plants data</div>;
+  }
 
-        // Check all keys in the category object
-        return Object.keys(category).flatMap((key) => {
-          const subcategory = category[key];
-          console.log("Subcategory:", subcategory);
+  const dataArray = data?.data || [];
 
-          if (Array.isArray(subcategory)) {
-            return subcategory.flatMap((item: any) => {
-              // Log each item
-              console.log("Item:", item);
+  // Function to gather all out-of-stock items
+  const getOutOfStockItems = () => {
+    // Gather all items from various categories
+    const allItems = dataArray.flatMap((dataItem: any) => [
+      ...(dataItem.flowers || []).flatMap((item: any) => item.details || []),
+      ...(dataItem.gardenDecor || []).flatMap(
+        (item: any) => item.details || []
+      ),
+      ...(dataItem.gifts || []).flatMap((item: any) => item.details || []),
+      ...(dataItem.pots || []).flatMap((item: any) => item.details || []),
+      ...(dataItem.season || []).flatMap((item: any) => item.details || []),
+      ...(dataItem.seeds || []).flatMap((item: any) => item.details || []),
+    ]);
 
-              if (Array.isArray(item.details)) {
-                return item.details.filter(
-                  (detail: any) => detail.add_to_cart === false
-                );
-              } else {
-                console.warn("Item details not an array:", item);
-                return [];
-              }
-            });
-          } else {
-            console.warn("Subcategory is not an array:", subcategory);
-            return [];
-          }
-        });
-      })
-    : [];
+    // Filter items where `add_to_cart` is false
+    return allItems.filter((item: any) => item.add_to_cart === false);
+  };
 
-  // Log the filtered out-of-stock items
-  console.log("Out of Stock Plants:", outOfStockItems);
+  const outOfStockItems = getOutOfStockItems();
 
   return (
-    <>
-      <h2 style={{ marginTop: "80px" }} className="plants">
-        Out of Stock
-      </h2>
-      <Row gutter={[16, 16]}>
-        {outOfStockItems.length > 0 ? (
-          outOfStockItems.map((item: any, index: number) => (
-            <Col xs={24} sm={12} md={8} lg={6} key={index}>
-              <Card hoverable cover={<img alt={item.name} src={item.image} />}>
-                <Meta title={item.name} description={`Price: ${item.price}`} />
-                <p>Expected Dispatch: {item.expected_dispatch_date}</p>
-              </Card>
-            </Col>
-          ))
-        ) : (
-          <p>No items out of stock.</p>
-        )}
-      </Row>
-    </>
+    <div>
+      <h1>Out Of Stock Items</h1>
+      {outOfStockItems.length > 0 ? (
+        outOfStockItems.map((item: any, index: number) => (
+          <div
+            key={index}
+            style={{
+              border: "1px solid #ccc",
+              padding: "10px",
+              margin: "10px 0",
+            }}
+          >
+            <h3>{item.name}</h3>
+            <img
+              src={item.image}
+              alt={item.name}
+              style={{ width: "150px", height: "150px", objectFit: "cover" }}
+            />
+            <p>Price: ${item.price}</p>
+            <p>Expected Dispatch Date: {item.expected_dispatch_date}</p>
+            <button
+              disabled
+              style={{ backgroundColor: "gray", color: "white" }}
+            >
+              Out of Stock
+            </button>
+          </div>
+        ))
+      ) : (
+        <p>No out-of-stock items found.</p>
+      )}
+    </div>
   );
 };
 

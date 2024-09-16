@@ -1,50 +1,66 @@
-// import {
-//   BaseQueryApi,
-//   BaseQueryFn,
-//   DefinitionType,
-//   FetchArgs,
-//   createApi,
-//   fetchBaseQuery,
-// } from "@reduxjs/toolkit/query/react";
-
-// const baseQuery = fetchBaseQuery({
-//   baseUrl: "http://localhost:5000",
-// });
-
-// const baseQueryWithoutToken: BaseQueryFn<
-//   FetchArgs,
-//   BaseQueryApi,
-//   DefinitionType
-// > = async (args, api, extraOptions): Promise<any> => {
-//   const result = await baseQuery(args, api, extraOptions);
-//   return result;
-// };
-
-// export const baseApi = createApi({
-//   reducerPath: "baseApi",
-//   baseQuery: baseQueryWithoutToken,
-//   endpoints: () => ({}),
-// });
-//
-//
-//
-//
-
-// Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { TCategory } from "../../types/index"; // Import types
 
-// Define a service using a base URL and expected endpoints
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/" }),
+  tagTypes: ["getPlants"],
   endpoints: (builder) => ({
-    getPlants: builder.query({
-      query: () => ({
-        method: "Get",
+    getPlants: builder.query<TCategory[], void>({
+      query: () => `plants`,
+      providesTags: ["getPlants"],
+    }),
+    createPlants: builder.mutation<void, TCategory>({
+      query: (data) => ({
         url: "plants",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["getPlants"],
+    }),
+
+    // Delete plant
+    deletePlant: builder.mutation({
+      query: (id) => ({
+        url: `/plants/${id}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // Delete details of a plant
+    deleteDetail: builder.mutation({
+      query: ({ plantId, detailId }) => ({
+        url: `/plants/${plantId}/details/${detailId}`,
+        method: "DELETE",
+      }),
+    }),
+
+    // Update plant
+    updatePlant: builder.mutation({
+      query: ({ id, body }) => ({
+        url: `/plants/${id}`,
+        method: "PUT",
+        body,
+      }),
+    }),
+
+    // Update plant details
+    updateDetail: builder.mutation({
+      query: ({ id, body }) => ({
+        url: `/plants/${id}/details`,
+        method: "PUT",
+        body,
       }),
     }),
   }),
 });
 
-export const { useGetPlantsQuery } = baseApi as any;
+// Export the hooks
+export const {
+  useGetPlantsQuery,
+  useCreatePlantsMutation,
+  useDeletePlantMutation,
+  useDeleteDetailMutation,
+  useUpdatePlantMutation,
+  useUpdateDetailMutation,
+} = baseApi as any;

@@ -1,18 +1,21 @@
-
-
 import React, { useState } from "react";
-import { Layout, Menu, Slider } from "antd";
+import { Layout, Menu, Slider, Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
+import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./Sidebar.css";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  collapsed: boolean;
+  toggleSidebar: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
   const navigate = useNavigate();
   const [priceRange, setPriceRange] = useState<[number, number]>([10, 1000]);
 
-  // Explicitly type the `handlePriceChange` function to expect a number array
   const handlePriceChange = (value: number[]) => {
     setPriceRange([value[0], value[1]]);
     navigate(`/price-range?min=${value[0]}&max=${value[1]}`);
@@ -20,20 +23,34 @@ const Sidebar: React.FC = () => {
 
   return (
     <Sider
+      width={collapsed ? 100 : 200}
       style={{
-        backgroundColor: "transparent",
-        top: "60px",
+        backgroundColor: "lightgrey",
+        transition: "width 0.3s ease",
+        top: "0vh",
+        left: 0,
       }}
+      collapsedWidth={0}
     >
+      <Button
+        type="primary"
+        onClick={toggleSidebar}
+        style={{
+          position: "absolute",
+          top: "5px",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </Button>
       <Menu
         mode="inline"
         style={{
           height: "100%",
           textAlign: "center",
-          top: "130px",
-          position: "fixed",
-          zIndex: "10px",
-          width: "200px",
+          width: "100%",
+          marginTop: "40px",
         }}
         defaultOpenKeys={["sub1", "sub2", "sub3"]}
       >

@@ -21,6 +21,10 @@ import AllProducts from "../pages/allProduct/AllProducts";
 import InStock from "../pages/availability/InStock";
 import OutOfStock from "../pages/availability/OutOfStock";
 import PriceRange from "../pages/price/PriceRange";
+import CartPage from "../pages/shopping/CartPage";
+import CheckoutPage from "../pages/shopping/CheckoutPage";
+import ProductList from "../pages/list/ProductList";
+import CreatePlantForm from "../pages/list/CreatePlantForm";
 
 const router = createBrowserRouter([
   {
@@ -94,7 +98,7 @@ const router = createBrowserRouter([
         element: <PotsPlantersDetails />,
       },
       {
-        path: "/garden-decor",
+        path: "/garden-decor/",
         element: <GardenDecorGallery />,
       },
       {
@@ -112,6 +116,18 @@ const router = createBrowserRouter([
       {
         path: "/price-range",
         element: <PriceRange />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      },
+      {
+        path: "/checkout",
+        element: <CheckoutPage />,
+      },
+      {
+        path: "/list",
+        element: <ProductList />,
       },
     ],
   },

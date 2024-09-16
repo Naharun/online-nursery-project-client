@@ -81,3 +81,84 @@ const AppFooter: React.FC = () => {
 };
 
 export default AppFooter;
+
+// import React from "react";
+// import { Layout } from "antd";
+// import { Link } from "react-router-dom";
+// import { GiVineFlower } from "react-icons/gi";
+// import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+
+// const { Footer } = Layout;
+
+// const AppFooter: React.FC = () => {
+//   return (
+//     <Footer
+//       style={{
+//         textAlign: "center",
+//         backgroundColor: "rgb(27, 26, 26)",
+//         color: "white",
+//         position: "fixed",
+//         bottom: 0,
+//         width: "100%",
+//         padding: "20px 50px",
+//       }}
+//     >
+//       <div
+//         style={{
+//           display: "flex",
+//           alignItems: "center",
+//           justifyContent: "center",
+//         }}
+//       >
+//         <GiVineFlower
+//           style={{ fontSize: "40px", color: "white", marginRight: "10px" }}
+//         />
+//         <h3 style={{ color: "white" }}>Plantify</h3>
+//       </div>
+//       <div>
+//         <p style={{ margin: "10px 0", color: "white" }}>
+//           &copy; 2024 Plantify. All rights reserved.
+//         </p>
+//         <div>
+//           <a
+//             href="https://facebook.com"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             style={{ margin: "0 10px" }}
+//           >
+//             <FaFacebook style={{ color: "white", fontSize: "20px" }} />
+//           </a>
+//           <a
+//             href="https://instagram.com"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             style={{ margin: "0 10px" }}
+//           >
+//             <FaInstagram style={{ color: "white", fontSize: "20px" }} />
+//           </a>
+//           <a
+//             href="https://twitter.com"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             style={{ margin: "0 10px" }}
+//           >
+//             <FaTwitter style={{ color: "white", fontSize: "20px" }} />
+//           </a>
+//         </div>
+//         <div style={{ marginTop: "10px" }}>
+//           <Link to="/" style={{ color: "white", marginRight: "10px" }}>
+//             Home
+//           </Link>
+//           <Link to="/about" style={{ color: "white", marginRight: "10px" }}>
+//             About Us
+//           </Link>
+//           <Link to="/contact-us" style={{ color: "white" }}>
+//             Contact Us
+//           </Link>
+//         </div>
+//       </div>
+//     </Footer>
+//   );
+// };
+
+// export default AppFooter;

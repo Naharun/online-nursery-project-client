@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Col, Row } from "antd";
 import { useGetPlantsQuery } from "../../redux/api/api";
 import { Link } from "react-router-dom";
+import { TCategoryItem, TCategory } from "../../types/index";
 
 const GiftPlantsGallery: React.FC = () => {
   const { data, error, isLoading } = useGetPlantsQuery();
@@ -9,28 +10,33 @@ const GiftPlantsGallery: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
 
-  const giftPlants = data?.find((item: any) => item.gift)?.gift || [];
+  const categories = data?.data;
 
-  if (!giftPlants.length) return <div>No data available</div>;
+  const giftPlant: TCategoryItem[] =
+    categories?.flatMap((category: TCategory) =>
+      category.gifts ? category.gifts : []
+    ) || [];
+
+  if (!giftPlant.length) return <div>No data available</div>;
 
   return (
     <>
-      <h2 className="plants">Gift Plants</h2>
+      <h2 className="plants">Gifts Plants</h2>
       <Row gutter={[16, 16]}>
-        {giftPlants.map((plant: any) => (
-          <Col key={plant.name} span={6}>
-            <Link to={`/gift/${plant.name}`}>
+        {giftPlant.map((gift: TCategoryItem) => (
+          <Col key={gift.name} xs={24} sm={12} md={8} lg={6}>
+            <Link to={`/gift/${gift.name}`}>
               <Card
                 hoverable
                 cover={
                   <img
                     style={{ height: "200px" }}
-                    alt={plant.name}
-                    src={plant.image}
+                    alt={gift.name}
+                    src={gift.image}
                   />
                 }
               >
-                <Card.Meta title={plant.name} />
+                <Card.Meta title={gift.name} />
               </Card>
             </Link>
           </Col>

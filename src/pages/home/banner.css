@@ -1,50 +1,34 @@
-/* Style for arrows  */
-
+/* General styles for banner arrows */
 .slick-prev,
 .slick-next {
     width: 30px !important;
-    /* Set background size to 30px */
     height: 30px !important;
-    /* Set background size to 30px */
     background-color: white !important;
-    /* White rounded background */
     border-radius: 50% !important;
-    /* Make the background rounded */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     z-index: 10 !important;
-    /* Ensure it's on top of other elements */
     opacity: 0.75 !important;
-    /* Slightly transparent */
     transition: opacity 0.3s ease !important;
     padding: 0 !important;
-    /* Remove any padding */
 }
 
-/* Center the arrows icon */
 .slick-prev:before,
 .slick-next:before {
     color: purple !important;
-    /* Purple color for arrow icons */
     font-size: 25px !important;
-    /* Adjust icon size to fit the background */
     margin: 0 !important;
-    /* Remove any default margins */
     display: inline-block;
     vertical-align: middle;
     line-height: 1 !important;
-    /* Ensure no extra space is added */
     content: '‹' !important;
-    /* Custom left arrow content */
 }
 
 .slick-next:before {
     content: '›' !important;
-    /* Custom right arrow content */
 }
 
-/* Adjust the position of the arrows */
 .slick-prev {
     left: 10px !important;
 }
@@ -52,3 +36,155 @@
 .slick-next {
     right: 10px !important;
 }
+
+/* Responsive styles for small devices */
+@media (max-width: 768px) {
+
+    .slick-prev,
+    .slick-next {
+        width: 25px !important;
+        height: 25px !important;
+        font-size: 20px !important;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 20px !important;
+    }
+
+    .slick-prev {
+        left: 5px !important;
+    }
+
+    .slick-next {
+        right: 5px !important;
+    }
+
+    .ant-carousel .slick-slide img {
+        width: 80% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 10px !important;
+        border-top-right-radius: 30px !important;
+    }
+
+    .ant-carousel .slick-slide div {
+        flex-direction: column !important;
+        text-align: center !important;
+        height: auto !important;
+        padding: 20px !important;
+    }
+
+    .ant-carousel .slick-slide div h3 {
+        font-size: 20px !important;
+    }
+
+    .ant-carousel .slick-slide div h3 span {
+        font-size: 18px !important;
+    }
+
+    .ant-carousel .slick-slide div button {
+        padding: 10px 15px !important;
+        font-size: 14px !important;
+    }
+
+    /* Adjust the icons and text in the info section */
+    .info-section {
+        display: flex;
+        flex-direction: row !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+        margin-bottom: 100px;
+    }
+
+    .info-section>div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .info-section div div {
+        font-size: 40px !important;
+        height: 80px !important;
+        width: 80px !important;
+    }
+
+    .info-section h2 {
+        font-size: 18px !important;
+    }
+
+    .info-section p {
+        font-size: 14px !important;
+    }
+}
+
+/* Extra small devices (phones, less than 600px) */
+@media (max-width: 600px) {
+
+    .slick-prev,
+    .slick-next {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 15px !important;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 15px !important;
+    }
+
+    .ant-carousel .slick-slide img {
+        width: 100% !important;
+        margin-top: 10px !important;
+    }
+
+    .ant-carousel .slick-slide div {
+        padding: 10px !important;
+    }
+
+    .ant-carousel .slick-slide div h3 {
+        font-size: 16px !important;
+    }
+
+    .ant-carousel .slick-slide div h3 span {
+        font-size: 14px !important;
+    }
+
+    .ant-carousel .slick-slide div button {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+
+    .info-section {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 90px !important;
+        margin-bottom: 150px;
+        width: 100%;
+    }
+
+    .info-section>div {
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    .info-section div div {
+        font-size: 30px !important;
+        height: 60px !important;
+        width: 60px !important;
+    }
+
+    .info-section h2 {
+        font-size: 16px !important;
+    }
+
+    .info-section p {
+        font-size: 12px !important;
+    }
+}
+

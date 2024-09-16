@@ -22,14 +22,19 @@ const AboutUs: React.FC = () => {
             className="img"
             level={2}
             style={{
-              padding: "50px 300px 0px 0px",
+              padding: "50px 20px",
               textAlign: "center",
-              height: "400px",
+              minHeight: "300px",
               color: "white",
-              lineHeight: "70px",
+              lineHeight: "1.2",
               backgroundImage: `url(${about})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
+              backgroundPosition: "center",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
             }}
           >
             <span style={{ fontSize: "20px", textUnderlineOffset: "20px" }}>

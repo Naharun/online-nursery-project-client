@@ -17,8 +17,6 @@ const contentStyle: React.CSSProperties = {
   gap: "20px",
   textAlign: "center",
   backgroundSize: "100%",
-  marginTop: "50px",
-  backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
 };
 
@@ -46,7 +44,7 @@ const Banner: React.FC = () => (
             src={bannerImage1}
             alt=""
           />
-          <div style={{ width: "50%", marginRight: "100px" }}>
+          <div style={{ width: "100%", marginRight: "100px" }}>
             <h3
               style={{
                 color: "purple",
@@ -97,7 +95,7 @@ const Banner: React.FC = () => (
             src={bannerImage2}
             alt=""
           />
-          <div style={{ width: "50%", marginRight: "100px" }}>
+          <div style={{ width: "100%", marginRight: "100px" }}>
             <h3
               style={{
                 color: "purple",
@@ -150,7 +148,7 @@ const Banner: React.FC = () => (
             src={bannerImage3}
             alt=""
           />
-          <div style={{ width: "50%", marginRight: "100px" }}>
+          <div style={{ width: "100%", marginRight: "100px" }}>
             <h3
               style={{
                 color: "purple",
@@ -203,7 +201,7 @@ const Banner: React.FC = () => (
             src={bannerImage4}
             alt=""
           />
-          <div style={{ width: "50%", marginRight: "100px" }}>
+          <div style={{ width: "100%", marginRight: "100px" }}>
             <h3
               style={{
                 color: "purple",
@@ -234,7 +232,10 @@ const Banner: React.FC = () => (
         </div>
       </div>
     </Carousel>
-    <div style={{ display: "flex" }}>
+    <div
+      className="info-section"
+      style={{ display: "flex", marginBottom: "100px" }}
+    >
       <div
         style={{
           width: "100%",

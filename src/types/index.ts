@@ -1,19 +1,38 @@
-export type TPlant = {
-  names: string;
-  _id: number;
-  name: string;
+export interface TPlantDetail {
   image: string;
+  name: string;
   price: string;
-  expected_dispatch_date: string;
   add_to_cart: boolean;
-};
+  expected_dispatch_date: string;
+}
 
-export type TCategory = {
+// Define the structure for each category of plants
+export interface TCategoryItem {
+  [x: string]: any;
+  pots: any;
+  seeds: any;
+  gifts: any;
+  season: any;
+  flowers: any;
+  gardenDecor: any;
   name: string;
   image: string;
-  details: TPlant[];
-};
+  details: TPlantDetail[];
+}
 
-export type TApiData = {
-  [key: string]: TCategory[];
-};
+// Define the structure for the main category response
+export interface TCategory {
+  [x: string]: any;
+  _id: number;
+  flowers?: TCategoryItem[];
+  gardenDecor?: TCategoryItem[];
+  gifts?: TCategoryItem[];
+  pots?: TCategoryItem[];
+  season?: TCategoryItem[];
+  seeds?: TCategoryItem[];
+}
+
+// Define the response type for the API
+export interface TApiResponse {
+  data: TCategory[];
+}

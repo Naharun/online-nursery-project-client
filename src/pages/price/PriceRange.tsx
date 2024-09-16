@@ -6,22 +6,32 @@ import { useGetPlantsQuery } from "../../redux/api/api";
 const { Meta } = Card;
 
 const PriceRange: React.FC = () => {
-  const { data } = useGetPlantsQuery();
+  const { data, error, isLoading } = useGetPlantsQuery();
   const location = useLocation();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error fetching data</div>;
 
   const queryParams = new URLSearchParams(location.search);
   const minPrice = parseFloat(queryParams.get("min") || "20");
   const maxPrice = parseFloat(queryParams.get("max") || "2000");
 
+  // Function to parse price correctly
+  const parsePrice = (price: any) => {
+    return typeof price === "string"
+      ? parseFloat(price.replace(/[^0-9.-]+/g, ""))
+      : price;
+  };
+
   // Filter data based on the price range
   const filteredItems =
-    data?.flatMap((category: any) =>
-      Object.values(category).flatMap((subcategory: any) => {
+    data?.data.flatMap((category: any) => {
+      return Object.values(category).flatMap((subcategory: any) => {
         if (Array.isArray(subcategory)) {
           return subcategory.flatMap((item: any) => {
             if (Array.isArray(item.details)) {
               return item.details.filter((detail: any) => {
-                const price = parseFloat(detail.price.replace("$", ""));
+                const price = parsePrice(detail.price);
                 return price >= minPrice && price <= maxPrice;
               });
             }
@@ -29,8 +39,8 @@ const PriceRange: React.FC = () => {
           });
         }
         return [];
-      })
-    ) || [];
+      });
+    }) || [];
 
   return (
     <>

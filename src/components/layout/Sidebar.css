@@ -57,18 +57,18 @@
     background-color: slategray !important;
     font-size: 15px;
     padding: 10px;
-    margin: 50px 20px;
+    margin: 0px 20px;
     border-radius: 10px;
     text-align: center;
 
 
 }
 .plants{
-    font-size: 18px;
+    font-size: 14px;
     padding: 5px;
     color: white;
     background-color: slategray;
-    margin: 40px 20px;
+    margin: 20px 20px 20px 20px;
     border-radius: 10px;
     text-align: center;
 }
@@ -78,5 +78,4 @@
     color: white;
     
 }
-
 
