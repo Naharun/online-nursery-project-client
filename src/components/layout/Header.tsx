@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import Navbar from "../share/Navbar";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import { useGetCartItemsQuery } from "../../redux/api/api";
 
 const { Header } = Layout;
 
@@ -16,6 +17,8 @@ const Headers: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
+  const { data } = useGetCartItemsQuery("User123");
+  console.log(data);
 
   const handleSearch = () => {
     dispatch(setSearchTerm(searchTerm));

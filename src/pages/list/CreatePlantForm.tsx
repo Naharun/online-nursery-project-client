@@ -12,19 +12,19 @@ import {
   useCreatePlantsMutation,
   useGetPlantsQuery,
 } from "../../redux/api/api";
+import { TPlants } from "../../types";
 
 const { Option } = Select;
 
 interface CreatePlantFormProps {
-  onClose: () => void; // Accept onClose prop
-  onSuccess: () => void; // Accept onSuccess prop
+  onClose: () => void;
+  onSuccess: () => void;
 }
 
 const CreatePlantForm: React.FC<CreatePlantFormProps> = ({
   onClose,
   onSuccess,
 }) => {
-  // Add props to the component
   const [form] = Form.useForm();
   const [createPlant] = useCreatePlantsMutation();
   const { data: plantsData, isLoading } = useGetPlantsQuery();
@@ -33,7 +33,6 @@ const CreatePlantForm: React.FC<CreatePlantFormProps> = ({
     form
       .validateFields()
       .then((values) => {
-        // Define available categories and map them
         const categoryMapping: { [key: string]: string } = {
           flowers: "flowers",
           gardenDecor: "gardenDecor",
@@ -62,7 +61,7 @@ const CreatePlantForm: React.FC<CreatePlantFormProps> = ({
 
         if (plantsData && plantsData[selectedCategory]) {
           const existingProduct = plantsData[selectedCategory].find(
-            (product: any) =>
+            (product: TPlants) =>
               product.name === values.name && product.image === values.image
           );
 
@@ -71,7 +70,7 @@ const CreatePlantForm: React.FC<CreatePlantFormProps> = ({
 
             updatedData = {
               [selectedCategory]: plantsData[selectedCategory].map(
-                (product: any) =>
+                (product: TPlants) =>
                   product.name === values.name ? existingProduct : product
               ),
             };
@@ -104,15 +103,15 @@ const CreatePlantForm: React.FC<CreatePlantFormProps> = ({
           .then(() => {
             message.success("Plant created/updated successfully!");
             form.resetFields();
-            onSuccess(); // Call onSuccess after creation
+            onSuccess();
           })
-          .catch((err: any) => {
-            const errorMessage = err?.data?.message || "Unknown error";
-            message.error(`Failed to create plant: ${errorMessage}`);
-          });
+        // .catch((err: any) => {
+        //   const errorMessage = err?.data?.message || "Unknown error";
+        //   message.error(`Failed to create plant: ${errorMessage}`);
+        // });
       })
-      .catch((_errorInfo) => {
-        message.error("Please correct the errors in the form.");
+      .catch((errorInfo) => {
+        message.error(`Please correct the errors in the form:${errorInfo}`);
       });
   };
 

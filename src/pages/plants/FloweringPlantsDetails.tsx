@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Card, Col, Row, Button, Select } from "antd";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/features/cartSlice";
-import { useGetPlantsQuery } from "../../redux/api/api";
+import { useAddToCartMutation, useGetPlantsQuery } from "../../redux/api/api";
 import { TCategoryItem, TPlantDetail } from "../../types/index";
 import "../../components/layout/Sidebar.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/features/cartSlice";
 
 const { Meta } = Card;
 const { Option } = Select;
 
 const FloweringPlantsDetails: React.FC = () => {
+  const [addToCartData] = useAddToCartMutation();
   const dispatch = useDispatch();
   const { flowerName } = useParams<{ flowerName: string }>();
   const { data, error, isLoading } = useGetPlantsQuery();
@@ -49,9 +50,14 @@ const FloweringPlantsDetails: React.FC = () => {
     }
     return variantsCopy;
   };
-
   // Handle adding to cart
   const handleAddToCart = (flowerDetail: TPlantDetail) => {
+    const newData = {
+      userId: "User123",
+      items: { ...flowerDetail },
+    };
+    console.log(newData);
+    addToCartData(newData);
     dispatch(addToCart(flowerDetail));
   };
 

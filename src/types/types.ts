@@ -1,6 +1,7 @@
 // types.ts
 export interface Product {
-  _id: any;
+  _id?: string;
+  categoryName?: string | undefined;
   id: string;
   name: string;
   price: number;

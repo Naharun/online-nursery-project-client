@@ -1,190 +1,196 @@
-import React, { useEffect, useState } from "react";
-import { Form, Input, Button, Checkbox, Modal, Space } from "antd";
-import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
-import { AddDetailsFormProps } from "../../types/list";
-import { TPlantDetail } from "../../types";
+// // import { Button, Checkbox, Form, Input, message, Modal } from "antd";
+// // import React from "react";
+// // import { AddDetailsFormProps, TAddDetailsFormData } from "../../types/list";
 
-const AddDetailsForm: React.FC<AddDetailsFormProps> = ({
-  visible,
-  onClose,
-  onSubmit,
-  product,
-}) => {
-  const [form] = Form.useForm();
-  const [details, setDetails] = useState<TPlantDetail[]>(
-    product?.details || []
-  );
+// // const AddDetailsForm: React.FC<AddDetailsFormProps> = ({
+// //   handleOk,
+// //   handleCancel,
+// //   isOpen,
+// //   onSubmit,
+// //   product,
+// // }) => {
+// //   const [form] = Form.useForm();
 
-  useEffect(() => {
-    if (product) {
-      form.setFieldsValue(product);
-      setDetails(product.details || []);
-    }
-  }, [product, form]);
+// //   const handleFormSubmit = (values: TAddDetailsFormData) => {
+// //     if (!product) {
+// //       message.error("No product selected.");
+// //       return;
+// //     }
 
-  const handleFormSubmit = (values: any) => {
-    const updatedProduct = { ...values, details };
-    onSubmit(updatedProduct);
-    form.resetFields();
-  };
+// //     // Create submission data with all form values
+// //     const submissionData: TAddDetailsFormData = {
+// //       name: values.name,
+// //       image: values.image,
+// //       price: values.price,
+// //       expected_dispatch_date: values.expected_dispatch_date,
+// //       add_to_cart: values.add_to_cart,
+// //     };
 
-  const addDetail = () => {
-    setDetails([
-      ...details,
-      {
-        name: "",
-        image: "",
-        price: "",
-        expected_dispatch_date: "",
-        add_to_cart: false,
-      },
-    ]);
-  };
+// //     // Pass the id separately as it's not part of TAddDetailsFormData
+// //     onSubmit(submissionData);
+// //   };
 
-  const removeDetail = (index: number) => {
-    const updatedDetails = details.filter((_, i) => i !== index);
-    setDetails(updatedDetails);
-  };
+// //   return (
+// //     <Modal
+// //       footer={null}
+// //       title="Add Product Details"
+// //       open={isOpen}
+// //       onOk={handleOk}
+// //       onCancel={() => {
+// //         form.resetFields();
+// //         handleCancel();
+// //       }}
+// //     >
+// //       <Form
+// //         form={form}
+// //         onFinish={handleFormSubmit}
+// //         layout="vertical"
+// //         initialValues={{}}
+// //       >
+// //         <Form.Item
+// //           name="name"
+// //           label="Product Name"
+// //           rules={[{ required: true, message: "Please enter product name" }]}
+// //         >
+// //           <Input />
+// //         </Form.Item>
 
-  const updateDetail = (
-    index: number,
-    field: keyof TPlantDetail, // Valid keys of TPlantDetail
-    value: any // Accepts any type for now
-  ) => {
-    setDetails((prevDetails) => {
-      const updatedDetails = [...prevDetails];
-      updatedDetails[index] = {
-        ...updatedDetails[index],
-        [field]: value, // Safely update the field
-      };
-      return updatedDetails;
-    });
-  };
+// //         <Form.Item
+// //           name="image"
+// //           label="Product Image URL"
+// //           rules={[{ required: true, message: "Please enter image URL" }]}
+// //         >
+// //           <Input />
+// //         </Form.Item>
 
-  return (
-    <Modal
-      visible={visible}
-      onCancel={onClose}
-      footer={null}
-      title={product ? "Edit Product Details" : "Add Product Details"}
-    >
-      <Form
-        form={form}
-        onFinish={handleFormSubmit}
-        layout="vertical"
-        initialValues={product}
-      >
-        <Form.Item
-          name="name"
-          label="Product Name"
-          rules={[{ required: true, message: "Please enter product name" }]}
-        >
-          <Input />
-        </Form.Item>
+// //         <Form.Item
+// //           name="price"
+// //           label="Price"
+// //           rules={[{ required: true, message: "Please enter price" }]}
+// //         >
+// //           <Input type="number" />
+// //         </Form.Item>
 
-        <Form.Item
-          name="image"
-          label="Image URL"
-          rules={[{ required: true, message: "Please enter image URL" }]}
-        >
-          <Input />
-        </Form.Item>
+// //         <Form.Item
+// //           name="expected_dispatch_date"
+// //           label="Expected Dispatch Date"
+// //           rules={[{ required: true, message: "Please enter dispatch date" }]}
+// //         >
+// //           <Input type="date" />
+// //         </Form.Item>
 
-        <Form.Item
-          name="price"
-          label="Price"
-          rules={[{ required: true, message: "Please enter price" }]}
-        >
-          <Input type="number" />
-        </Form.Item>
+// //         <Form.Item
+// //           label="Add to Cart"
+// //           name="add_to_cart"
+// //           valuePropName="checked"
+// //         >
+// //           <Checkbox />
+// //         </Form.Item>
 
-        <Form.Item
-          name="category"
-          label="Category"
-          rules={[{ required: true, message: "Please enter category" }]}
-        >
-          <Input />
-        </Form.Item>
+// //         <Form.Item>
+// //           <Button type="primary" htmlType="submit">
+// //             Submit
+// //           </Button>
+// //         </Form.Item>
+// //       </Form>
+// //     </Modal>
+// //   );
+// // };
 
-        <Form.Item
-          name="expected_dispatch_date"
-          label="Expected Dispatch Date"
-          rules={[{ required: true, message: "Please enter dispatch date" }]}
-        >
-          <Input type="date" />
-        </Form.Item>
+// // export default AddDetailsForm;
 
-        <h3>Product Details</h3>
-        {details.map((detail, index) => (
-          <Space key={index} direction="vertical" style={{ width: "100%" }}>
-            <Form.Item label={`Detail ${index + 1} - Name`}>
-              <Input
-                value={detail.name}
-                onChange={(e) => updateDetail(index, "name", e.target.value)}
-                placeholder="Enter detail name"
-              />
-            </Form.Item>
+// import { Button, Checkbox, Form, Input, message, Modal } from "antd";
+// import React from "react";
+// import { AddDetailsFormProps } from "../../types/list";
 
-            <Form.Item label={`Detail ${index + 1} - Image URL`}>
-              <Input
-                value={detail.image}
-                onChange={(e) => updateDetail(index, "image", e.target.value)}
-                placeholder="Enter image URL"
-              />
-            </Form.Item>
+// const AddDetailsForm: React.FC<AddDetailsFormProps> = ({
+//   handleOk,
+//   handleCancel,
+//   isOpen,
+//   onSubmit,
+//   product,
+// }) => {
+//   const [form] = Form.useForm();
+//   const handleFormSubmit = (values: {
+//     name: string;
+//     image: string;
+//     price: number;
+//     category: string;
+//   }) => {
+//     if (!product) {
+//       message.error("No product selected.");
+//       return;
+//     }
+//     const submissionData = {
+//       category: product.categoryName || values.category,
+//       name: product.name,
+//       details: [values],
+//     };
 
-            <Form.Item label={`Detail ${index + 1} - Price`}>
-              <Input
-                type="number"
-                value={detail.price}
-                onChange={(e) => updateDetail(index, "price", e.target.value)}
-                placeholder="Enter price"
-              />
-            </Form.Item>
+//     onSubmit({ id: product._id, submissionData });
+//   };
+//   return (
+//     <Modal
+//       footer={null}
+//       title="Add Product Details"
+//       open={isOpen}
+//       onOk={handleOk}
+//       onCancel={() => {
+//         form.resetFields();
+//         handleCancel();
+//       }}
+//     >
+//       <Form
+//         form={form}
+//         onFinish={handleFormSubmit}
+//         layout="vertical"
+//         initialValues={{}}
+//       >
+//         <Form.Item
+//           name="name"
+//           label="Product Name"
+//           rules={[{ required: true, message: "Please enter product name" }]}
+//         >
+//           <Input />
+//         </Form.Item>
 
-            <Form.Item label={`Detail ${index + 1} - Expected Dispatch Date`}>
-              <Input
-                type="date"
-                value={detail.expected_dispatch_date}
-                onChange={(e) =>
-                  updateDetail(index, "expected_dispatch_date", e.target.value)
-                }
-                placeholder="Enter dispatch date"
-              />
-            </Form.Item>
+//         <Form.Item
+//           name="image"
+//           label="Product Image URL"
+//           rules={[{ required: true, message: "Please enter image URL" }]}
+//         >
+//           <Input />
+//         </Form.Item>
 
-            <Form.Item label="Add to Cart">
-              <Checkbox
-                checked={detail.add_to_cart}
-                onChange={(e) =>
-                  updateDetail(index, "add_to_cart", e.target.checked)
-                }
-              />
-            </Form.Item>
+//         <Form.Item
+//           name="price"
+//           label="Price"
+//           rules={[{ required: true, message: "Please enter price" }]}
+//         >
+//           <Input type="number" />
+//         </Form.Item>
+//         <Form.Item
+//           name="expected_dispatch_date"
+//           label="Expected Dispatch Date"
+//           rules={[{ required: true, message: "Please enter dispatch date" }]}
+//         >
+//           <Input type="date" />
+//         </Form.Item>
+//         <Form.Item
+//           label="Add to Cart"
+//           name="add_to_cart"
+//           valuePropName="checked"
+//         >
+//           <Checkbox />
+//         </Form.Item>
+//         <Form.Item>
+//           <Button type="primary" htmlType="submit">
+//             Submit
+//           </Button>
+//         </Form.Item>
+//       </Form>
+//     </Modal>
+//   );
+// };
 
-            <Button
-              type="dashed"
-              danger
-              icon={<MinusCircleOutlined />}
-              onClick={() => removeDetail(index)}
-            >
-              Remove Detail
-            </Button>
-          </Space>
-        ))}
-
-        <Button type="dashed" onClick={addDetail} icon={<PlusOutlined />}>
-          Add New Detail
-        </Button>
-
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-    </Modal>
-  );
-};
-
-export default AddDetailsForm;
+// export default AddDetailsForm;

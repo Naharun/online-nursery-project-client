@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Card, Col, Row, Button, Select } from "antd";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cartSlice";
-import { useGetPlantsQuery } from "../../redux/api/api";
+import { useAddToCartMutation, useGetPlantsQuery } from "../../redux/api/api";
 import { TCategoryItem, TPlantDetail } from "../../types/index";
 import "../../components/layout/Sidebar.css";
 
@@ -11,6 +11,7 @@ const { Meta } = Card;
 const { Option } = Select;
 
 const FlowersBySeasonDetails: React.FC = () => {
+  const [addToCartData] = useAddToCartMutation();
   const dispatch = useDispatch();
   const { seasonName } = useParams<{ seasonName: string }>();
   const { data, error, isLoading } = useGetPlantsQuery();
@@ -54,6 +55,12 @@ const FlowersBySeasonDetails: React.FC = () => {
   };
 
   const handleAddToCart = (seasonDetail: TPlantDetail) => {
+    const newData = {
+      // userId: "User123",
+      items: { ...seasonDetail },
+    };
+    console.log(newData);
+    addToCartData(newData);
     dispatch(addToCart(seasonDetail));
   };
 

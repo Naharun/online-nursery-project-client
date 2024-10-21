@@ -129,6 +129,19 @@ const router = createBrowserRouter([
         path: "/list",
         element: <ProductList />,
       },
+      {
+        path: "/create-plant",
+        element: (
+          <CreatePlantForm
+            onClose={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            onSuccess={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
+        ),
+      },
     ],
   },
 ]);
